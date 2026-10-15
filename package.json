@@ -1,0 +1,29 @@
+{
+  "name": "groupgrove",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A Discord breakout group size planner with private previews",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=24.13.0 <25"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env src/main.ts",
+    "register": "node --env-file-if-exists=.env src/register.ts",
+    "setup": "node scripts/setup.mjs",
+    "test": "node --test test/*.test.ts",
+    "lint": "biome check .",
+    "typecheck": "tsc --noEmit",
+    "supply": "node scripts/supply.mjs",
+    "check": "npm run lint && npm run typecheck && npm test && npm run supply"
+  },
+  "dependencies": {
+    "discord.js": "14.27.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.15",
+    "@types/node": "24.19.2",
+    "typescript": "7.0.2"
+  }
+}
